@@ -20,16 +20,16 @@ if (!$conn) {
 
 // Verifica se os dados do formulário foram enviados
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+
     // Recebe os dados do formulário
     $nome = $_POST['name'];
     $email = $_POST['email'];
     $cpf = $_POST['cpf'];
-    $rg = $_POST['rg'];
+    $rg = $_POST['rg'] ?? 'Não informado';
     $id_empresa = $_POST['company'];
 
     // Validação simples
-    if (empty($nome) || empty($email) || empty($cpf) || empty($rg) || empty($id_empresa)) {
+    if (empty($nome) || empty($email) || empty($cpf) || empty($id_empresa)) {
         $_SESSION['message_user'] = [
             'tipo' => 'error',
             'conteudo' => 'Todos os campos são obrigatórios!'

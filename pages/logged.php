@@ -15,7 +15,7 @@ $db = $database->getConnection();
 
 // Consulta para obter todos os funcionários com o nome da empresa
 $query = "SELECT f.*, e.nome AS nome_empresa FROM tbl_funcionario f
-          JOIN tbl_empresa e ON f.id_empresa = e.id_empresa ORDER BY f.nome DESC";
+          JOIN tbl_empresa e ON f.id_empresa = e.id_empresa ORDER BY f.nome ASC";
 $stmt = $db->prepare($query);
 $stmt->execute();
 $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -74,7 +74,11 @@ $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td><?php echo htmlspecialchars($funcionario['email']); ?></td>
                             <td><?php echo htmlspecialchars($funcionario['nome_empresa']); ?></td>
                             <td><?php echo htmlspecialchars($funcionario['cpf']); ?></td>
-                            <td><?php echo htmlspecialchars($funcionario['rg']); ?></td>
+                            <td>
+                                <?php
+                                echo !empty($funcionario['rg']) ? $funcionario['rg'] : 'Não informado';
+                                ?>
+                            </td>
                             <td class="btn-actions">
                                 <a href="#?id=<?php echo $funcionario['id_funcionario']; ?>" class="button">Edit</a>
                                 <a href="#?id=<?php echo $funcionario['id_funcionario']; ?>" class="button button-exclude">Delete</a>

@@ -96,7 +96,7 @@ try {
             <!-- Input de RG -->
             <div class="form-group">
                 <label for="rg" class="form-label">Registro Geral (RG):</label>
-                <input type="text" id="rg" name="rg" class="form-control" placeholder="Digite seu RG">
+                <input type="text" id="rg" name="rg" class="form-control" maxlength="20" placeholder="Digite seu RG">
             </div>
 
             <!-- Select de Empresa -->

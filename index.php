@@ -59,7 +59,7 @@ if (isset($_SESSION['usuario'])) {
             <!-- Botão de submit -->
             <button type="submit" class="btn-login">Entrar</button>
         </form>
-        <p class="text-muted">Não tem uma conta? <a href="pages/form_register_user.php">Cadastre-se</a></p>
+        <p class="text-muted">Não tem uma conta? <a href="#">Cadastre-se</a></p>
     </div>
 </body>
 

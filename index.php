@@ -48,7 +48,7 @@ if (isset($_SESSION['usuario'])) {
             <!-- Input de E-mail -->
             <div class="form-group">
                 <label for="email" class="form-label">E-mail</label>
-                <input type="text" id="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
             </div>
 
             <div class="form-group">

@@ -29,7 +29,7 @@ body {
     background: #1e1e2f;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    padding: 40px 30px;
+    padding: 15px 20px;
     max-width: 400px;
     width: 100%;
 }
@@ -44,7 +44,7 @@ body {
 
 /* Campos do formulário */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-label {
@@ -112,12 +112,12 @@ body {
 .icon {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .icon img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 
 /* Ícone de Voltar */

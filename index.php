@@ -48,12 +48,12 @@ if (isset($_SESSION['usuario'])) {
             <!-- Input de E-mail -->
             <div class="form-group">
                 <label for="email" class="form-label">E-mail</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+                <input type="text" id="email" name="email" class="form-control" placeholder="Digite seu e-mail">
             </div>
 
             <div class="form-group">
                 <label for="password" class="form-label">Senha</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha" required>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha">
             </div>
 
             <!-- Botão de submit -->

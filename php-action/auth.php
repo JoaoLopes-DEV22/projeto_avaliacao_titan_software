@@ -28,8 +28,13 @@ try {
         throw new Exception("Usuário e senha são obrigatórios.");
     }
 
+    // Valida o formato do email
+    if (!filter_var($login, FILTER_VALIDATE_EMAIL)) {
+        throw new Exception("Formato de email inválido.");
+    }
+
     // Consulta para verificar as credenciais do usuário
-    $query = "SELECT id_usuario, login, senha FROM tbl_usuario WHERE login = :login";
+    $query = "SELECT id_usuario, `login`, senha FROM tbl_usuario WHERE `login` = :login";
     $stmt = $dbConnection->prepare($query);
     $stmt->bindParam(':login', $login);
     $stmt->execute();
@@ -38,9 +43,9 @@ try {
     if ($stmt->rowCount() === 1) {
         $user = $stmt->fetch();
 
-        // Verifica se a senha fornecida é igual à senha armazenada no banco de dados
-        if ($senha === $user['senha']) {
-
+        // Converte a senha fornecida para MD5 e verifica com a armazenada
+        if (md5($senha) === $user['senha']) {
+            
             // Armazena os dados do usuário na sessão
             $_SESSION['usuario'] = [
                 'id' => $user['id_usuario'],
@@ -64,13 +69,12 @@ try {
         throw new Exception("Usuário ou senha inválidos.");
     }
 } catch (Exception $e) {
-
     // Armazena mensagem de erro e redireciona para a página de login
     $_SESSION['mensagem'] = [
         'tipo' => 'error',
         'conteudo' => $e->getMessage()
     ];
-    
+
     header("Location: ../index.php");
     exit;
 }

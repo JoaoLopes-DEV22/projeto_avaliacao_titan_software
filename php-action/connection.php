@@ -28,7 +28,7 @@ class Database
             // Log de erro caso não consiga se conectar
             error_log("Erro na conexão com o banco de dados: " . $e->getMessage());
         }
-        
+
         // Retorna se a conexão foi sucedida ou não
         return $this->conn;
     }

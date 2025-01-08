@@ -1,12 +1,15 @@
 # Sistema de Gerenciamento de Funcionários
 
-Este é um sistema simples de gerenciamento de funcionários, com funcionalidades para listar e cadastrar funcionários e empresas. Desenvolvido com PHP e MySQL, o sistema utiliza um banco de dados relacional para associar cada funcionário à sua empresa.
+Este é um sistema de gerenciamento de funcionários desenvolvido em PHP e MySQL. Ele permite o cadastro, edição de funcionários e exclusão, incluindo funcionalidades como o cálculo de bonificação baseado no tempo de serviço e a associação de funcionários a empresas.
 
 ## Funcionalidades
 
-- **Cadastro de Funcionários**: Adicione novos funcionários ao sistema.
-- **Cadastro de Empresas**: Cadastre novas empresas que os funcionários podem ser associados.
-- **Listagem de Funcionários**: Veja todos os funcionários cadastrados com suas informações e o nome da empresa associada.
+- **Cadastro de Funcionários**: Adicione novos funcionários ao sistema com informações como nome, CPF, RG, email, salário, data de cadastro e empresa associada.
+- **Edição de Funcionários**: Edite as informações de funcionários existentes, incluindo a atualização de dados como nome, CPF, email, salário e bonificação.
+- **Cálculo Automático de Bonificação**: A bonificação do funcionário é calculada automaticamente com base no tempo de serviço (anos de empresa), sendo 10% para mais de 1 ano de serviço e 20% para mais de 5 anos.
+- **Cadastro de Empresas**: Cadastre empresas para associar os funcionários a elas.
+- **Listagem de Funcionários**: Exiba todos os funcionários cadastrados com suas informações, como nome, CPF, RG, salário, data de cadastro, bonificação e empresa associada.
+- **Mensagem de Sucesso ou Erro**: Após realizar ações como cadastro ou edição, o sistema exibe mensagens de sucesso ou erro.
 - **Logout**: Permite que o usuário saia do sistema de forma segura.
 
 ## Tecnologias Utilizadas
@@ -15,6 +18,7 @@ Este é um sistema simples de gerenciamento de funcionários, com funcionalidade
 - **MySQL**: Banco de dados relacional para armazenar dados de funcionários e empresas.
 - **HTML/CSS**: Para a construção das páginas e estruturação do layout.
 - **PDO**: Para interação com o banco de dados de forma segura.
+- **TCPDF**: Para criação de PDFs.
 
 ![HTML Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS Badge](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -27,8 +31,8 @@ Este é um sistema simples de gerenciamento de funcionários, com funcionalidade
 
 1. **tbl_usuario**:
    - `id_usuario` (INT, Primary Key)
-   - `login` (VARCHAR(20))
-   - `senha` (VARCHAR(20))
+   - `login` (VARCHAR(50))
+   - `senha` (VARCHAR(30))
 
 2. **tbl_empresa**: 
    - `id_empresa` (INT, Primary Key)
@@ -41,6 +45,9 @@ Este é um sistema simples de gerenciamento de funcionários, com funcionalidade
    - `rg` (VARCHAR(20))
    - `email` (VARCHAR(30))
    - `id_empresa` (INT, Foreign Key, refere-se a `tbl_empresa`)
+   - `data_cadastro` (DATE)
+   - `salario` (DOUBLE(10, 2))
+   - `bonificacao` (DOUBLE(10, 2))
 
 ## Como Rodar o Projeto
 
@@ -49,4 +56,4 @@ Este é um sistema simples de gerenciamento de funcionários, com funcionalidade
    git clone https://github.com/JoaoLopes-DEV22/projeto_avaliacao_titan_software.git
 
 2. Inicie o servidor 
-3. Acesse localhost/projeto_avaliacao_titan_software
+3. Acesse localhost/projeto_avaliacao_titan_software/

@@ -32,7 +32,7 @@ Este é um sistema de gerenciamento de funcionários desenvolvido em PHP e MySQL
 1. **tbl_usuario**:
    - `id_usuario` (INT, Primary Key)
    - `login` (VARCHAR(50))
-   - `senha` (VARCHAR(30))
+   - `senha` (VARCHAR(32))
 
 2. **tbl_empresa**: 
    - `id_empresa` (INT, Primary Key)

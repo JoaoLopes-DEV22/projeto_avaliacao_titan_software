@@ -2,10 +2,10 @@
 session_start();
 
 // Verifica se há uma mensagem de sucesso ou erro na sessão e define uma variável local para usá-la
-$mensagem = isset($_SESSION['mensagem']) ? $_SESSION['mensagem'] : null;
+$mensagem = isset($_SESSION['mensagem']) ? $_SESSION['mensagem']  null;
 
 // Limpa a sessão de mensagem após exibi-la
-unset($_SESSION['mensagem']);
+unset($_SESSION'mensagem']);
 
 // Verifica se o usuário já está logado, se estiver, redireciona para a página logged.php
 if (isset($_SESSION['usuario'])) {

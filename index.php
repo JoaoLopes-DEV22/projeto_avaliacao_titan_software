@@ -52,7 +52,7 @@ if (isset($_SESSION['usuario'])) {
             </div>
 
             <div class="form-group">
-                <label for="password" class="form-label">Senha</label
+                <label for="password" class="form-label">Senha</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha">
             </div>
 
